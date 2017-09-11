@@ -6,6 +6,7 @@ Description:
 Connect OLED with SSD1306 Controller to my MacBook Pro with MPSSE cable using FTDI D2xx driver
 
 ![pins](https://raw.githubusercontent.com/chadwyck-w/FT232H-MPSSE-I2C-SSD1306-OLED/master/colored%20wires%20to%20pin%20orientation.png)
+![pins](https://raw.githubusercontent.com/chadwyck-w/FT232H-MPSSE-I2C-SSD1306-OLED/master/IMG_4272.png)
 
 Background:
 
@@ -21,6 +22,11 @@ https://github.com/adafruit/Adafruit-GFX-Library
 
 USB to I2C Example using the FT232H and FT201X devices
 http://www.ftdichip.com/Support/Documents/AppNotes/AN_255_USB%20to%20I2C%20Example%20using%20the%20FT232H%20and%20FT201X%20devices.pdf
+
+Link to USB 3.3v cable
+https://www.amazon.com/gp/product/B00HKK4SCO/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1
+
+
 
 Command line options
 
