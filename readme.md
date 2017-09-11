@@ -2,7 +2,10 @@ FT2232H D2XX for OSX and SSD1306 controller via I2C
 MPSSE FT232H 
 
 Description:
+
 Connect OLED with SSD1306 Controller to my MacBook Pro with MPSSE cable using FTDI D2xx driver
+
+![Alt text](/colored\ wires\ to\ pin\ orientation.png?raw=true "Pin Orientation")
 
 Background:
 
