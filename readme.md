@@ -6,7 +6,7 @@ Description:
 Connect OLED with SSD1306 Controller to my MacBook Pro with MPSSE cable using FTDI D2xx driver
 
 ![pins](https://raw.githubusercontent.com/chadwyck-w/FT232H-MPSSE-I2C-SSD1306-OLED/master/colored%20wires%20to%20pin%20orientation.png)
-![pins](https://raw.githubusercontent.com/chadwyck-w/FT232H-MPSSE-I2C-SSD1306-OLED/master/IMG_4272.png)
+![pins](https://raw.githubusercontent.com/chadwyck-w/FT232H-MPSSE-I2C-SSD1306-OLED/master/IMG_4272.JPG)
 
 Background:
 
