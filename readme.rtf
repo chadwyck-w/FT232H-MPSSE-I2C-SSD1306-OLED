@@ -1,0 +1,84 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset0 Consolas;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red27\green29\blue31;
+\red235\green236\blue237;}
+{\*\expandedcolortbl;;\csgray\c0;\csgray\c100000;\cssrgb\c14118\c15294\c16078;
+\cssrgb\c93725\c94118\c94510;}
+\margl1440\margr1440\vieww24460\viewh9120\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \cb3 \CocoaLigature0 Command line options\
+\
+./oled -l\
+cycle once through the images in the images folder\
+\
+./oled 5 -i image.bmp\
+The argument supplied is timeout 5 image image.bmp\
+\
+./oled\
+defaults are 3 second delay filename image.bmp\
+\
+./oled -t 100\
+100ms timeout between frames\
+\
+./oled -d 1000\
+1s delay before turning off last image \
+\
+./oled -D FTYPX46A -l\
+Use the FTYPX46A 5V Cable\
+\
+./oled -D \
+Use the FT0EARPI 3.3v Cable \'97 This is the default cable\
+\
+Try not to keep the same image on the screen for too long, you will burn up the OLED.\
+\
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+Instructions for image conversion of png images output by AfterEffects \
+\
+for i in *.png; do convert "$i" -depth 1 -colors 2 -rotate 180 -flip output/"$i".bmp; done\
+\
+or\
+\
+magick mogrify -format bmp -depth 1 -colors 2 -rotate 180 -flip *.png\
+\
+\
+\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
+\
+Notes / Addendum\
+\
+Convert photoshop layers to BMP compatible with device.\
+\
+convert \'91filename\'92 -background black -flatten -gravity center -extent 128x64 -depth 1 -colors 2 -rotate 180 -flip \'91filename\'92.bmp\
+\
+for i in *.png; do convert "$i" -depth 1 -colors 2 -rotate 180 -flip  -background black -flatten -gravity center -extent 128x64 "$i".bmp; done\
+\
+resize from photoshop\
+mogrify -format bmp 
+\f1\fs26 \cf4 \cb5 \expnd0\expndtw0\kerning0
+\CocoaLigature1 -set colorspace gray
+\f0\fs22 \cf2 \cb3 \kerning1\expnd0\expndtw0 \CocoaLigature0  -depth 1 -colors 2 -rotate 180 -flip -resize 64x64 -background black -flatten -gravity center -extent 128x64 -type palette *.png\
+\
+\
+\
+\
+mogrify  -format bmp -resize 64x64 -background black -flatten -gravity center -extent 128x64 -colorspace Gray +matte -depth 1 -colors 2 -type palette *.png\
+\
+\
+//sequence to get in the right format\
+mogrify  -format bmp -resize 64x64 -background black -flatten -gravity center -extent 128x64 *.png\
+\
+mogrify -colorspace Gray +matte -depth 1 -colors 2 -type palette *.bmp\
+\
+mogrify -flip *.bmp\
+\
+//Clip, Move down, repaint, set color depth\
+mogrify -format bmp -background black -flatten -gravity center -extent 200x150 *.png\
+\
+mogrify -resize 64x48 -background black -flatten -gravity South -extent 128x64 *.bmp  \
+\
+mogrify -flip -colorspace Gray +matte -depth 1 -colors 2 -type palette *.bmp\
+\
+}
